@@ -1,0 +1,4 @@
+[
+    {"Name": "London", "Postcode": "SE1", "Flag": "Supported"}, 
+    {"Name": "Liverpool", "Postcode": "L1", "Flag": "Unsupported"}
+]

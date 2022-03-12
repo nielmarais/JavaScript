@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type = "text/javascript">
+      let data = [
+          {"Name": "London", "Postcode": "SE", "Flag": "Supported"}, 
+          {"Name": "Liverpool", "Postcode": "L1", "Flag": "Unsupported"}
+    ]
+
+    function searchValue() {
+        let srchString = ''
+        var searchField = $('#search').val().trim().substring(0, 2);
+        let srchVal = data.filter(val => val.Postcode.toLowerCase().includes(searchField))
+        srchVal.forEach((item) => {
+            srchString += `<li>${item.Name}, ${item.Flag}</li>`
+        })
+        $('#resultDiv').empty().append(srchString)
+    }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id='search' placeholder="Enter your postcode">
+    <input type="button" value='Search' onclick='searchValue()'>
+    <div id='resultDiv'></div>
+</body>
+</html>
