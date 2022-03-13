@@ -54,12 +54,16 @@ function searchValue() {
     const searchInput = document.getElementById('search').value.substring(0, 2).toUpperCase();
     if (searchInput && searchInput.trim().length > 1 && postCodes.find(({Postcode}) => 
     Postcode == searchInput)) {
-        console.log(searchInput + ' ' + 'was found');
         window.location.href = "./supported.html";
     } else if (searchInput && searchInput.trim() == null || searchInput.trim().length < 2) {
         alert('Please enter at least 2 characters');
     } else {
-        console.log('No results found');
         window.location.href = "./notsupported.html";
     }
 }
+
+$(document).keypress(function(e){
+    if (e.which == 13){
+        $("#submit").click();
+    }
+});

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Postcode Search</title>
 </head>
 <body>
     <script src="./postcode.js"></script>
-    <input type="text" id='search'>
-    <input type="submit" value='Search' onclick='searchValue()'>
+    <input type="text" id='search' autocomplete="off" placeholder="Enter your postcode" onfocus="this.value=''">
+    <input type="submit" id="submit" value='Search' onclick='searchValue()'>
 </body>
 </html>
+
